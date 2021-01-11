@@ -10,11 +10,13 @@ pipeline {
       
     }
     stage ('Slack Notification'){
+      steps {
          slackSend channel: '#﻿jenkins-pipeline-demo', 
            color: 'good', 
            message: 'Welcome to Jenkins Slack!', 
            teamDomain: 'https://hooks.slack.com/services/', 
            tokenCredentialId: 'slack-demo'
+      }
     
     }
   }
